@@ -1,0 +1,142 @@
+{{ $slug := .Get "slug" }}
+{{ $album := dict }}
+{{ range site.Data.gallery.albums }}
+  {{ if eq .slug $slug }}{{ $album = . }}{{ end }}
+{{ end }}
+{{ $dir := printf "static/media/gallery/%s" $slug }}
+{{ $files := readDir $dir }}
+
+<style>
+  .album-wrap {
+    width: min(94vw, 800px);
+    margin: 0 auto;
+    padding: 20px 0 72px;
+  }
+  .album-back {
+    display: inline-flex;
+    margin: 0 0 20px;
+    padding: 8px 14px;
+    border: 1px solid rgba(141, 185, 178, 0.55);
+    background: linear-gradient(90deg, #eef7f4 0%, #f6fafc 100%);
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .album-intro {
+    margin: 0 0 28px;
+    padding: 20px 24px;
+    border-left: 6px solid #8db9b2;
+    background: linear-gradient(90deg, #eef7f4 0%, #f6fafc 100%);
+  }
+  .album-intro h2 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 1.45rem;
+  }
+  .album-intro p {
+    margin: 0;
+    max-width: none;
+    color: #52706d;
+  }
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .album-photo {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #edf5f4;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  }
+  .album-photo img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover;
+    object-position: center center;
+    display: block !important;
+    border-radius: 0 !important;
+    transition: transform 220ms ease;
+  }
+  .album-photo:hover img {
+    transform: scale(1.025);
+  }
+  .album-empty {
+    padding: 28px;
+    border: 1px dashed rgba(141, 185, 178, 0.7);
+    border-radius: 18px;
+    color: #64748b;
+    background: #f8fbfb;
+  }
+  .dark .album-back,
+  .dark .album-intro {
+    border-color: rgba(156, 203, 196, 0.45);
+    background: linear-gradient(90deg, rgba(141, 185, 178, 0.22) 0%, rgba(120, 154, 181, 0.12) 100%);
+    color: #e2e8f0;
+  }
+  .dark .album-intro h2 {
+    color: #f8fafc;
+  }
+  .dark .album-intro p,
+  .dark .album-empty {
+    color: #cbd5e1;
+  }
+  .dark .album-empty {
+    background: rgba(15, 23, 42, 0.35);
+  }
+  @media (max-width: 860px) {
+    .album-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 560px) {
+    .album-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="album-wrap">
+  <a class="album-back" href="{{ if eq site.Language.Lang "en" }}/en/#gallery{{ else }}/#gallery{{ end }}">{{ if eq site.Language.Lang "en" }}← Back to Gallery{{ else }}← 返回活动相册{{ end }}</a>
+  <section class="album-intro">
+    <h2>{{ cond (eq site.Language.Lang "en") $album.title_en $album.title }}</h2>
+    {{ $subtitle := cond (eq site.Language.Lang "en") $album.subtitle_en $album.subtitle }}
+    {{ with $subtitle }}<p>{{ . }}</p>{{ end }}
+  </section>
+
+  <div class="album-grid">
+    {{ $count := 0 }}
+    {{ $coverPath := printf "%s/cover.jpg" $dir }}
+    {{ if fileExists $coverPath }}
+      {{ $count = add $count 1 }}
+      <figure class="album-photo">
+        <img src="{{ printf "/media/gallery/%s/cover.jpg?v=%d" $slug now.Unix }}" alt="{{ printf "%s cover photo" $slug }}" loading="lazy" />
+      </figure>
+    {{ end }}
+    {{ range $files }}
+      {{ $name := lower .Name }}
+      {{ $isImage := and (not .IsDir) (or (hasSuffix $name ".jpg") (hasSuffix $name ".jpeg") (hasSuffix $name ".png") (hasSuffix $name ".webp") (hasSuffix $name ".gif")) }}
+      {{ $isCoverLike := or (eq $name "cover.jpg") (eq $name "cover.jpeg") (eq $name "cover.png") (eq $name "cover.webp") }}
+      {{ if and $isImage (not $isCoverLike) }}
+        {{ $count = add $count 1 }}
+        <figure class="album-photo">
+          <img src="{{ printf "/media/gallery/%s/%s?v=%d" $slug .Name now.Unix }}" alt="{{ printf "%s photo %d" $slug $count }}" loading="lazy" />
+        </figure>
+      {{ end }}
+    {{ end }}
+  </div>
+  {{ if eq $count 0 }}
+    <div class="album-empty">
+      {{ if eq site.Language.Lang "en" }}
+        No photos yet. Put cover.jpg and photos such as 01.jpg, 02.jpg, 03.jpg in <code>{{ $dir }}</code>.
+      {{ else }}
+        还没有照片。请把 cover.jpg 和 01.jpg、02.jpg、03.jpg 等照片放到 <code>{{ $dir }}</code>。
+      {{ end }}
+    </div>
+  {{ end }}
+</div>

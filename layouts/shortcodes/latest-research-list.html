@@ -1,0 +1,56 @@
+{{- $all := where (readDir "static/media/latest-research") "IsDir" true -}}
+{{- $sorted := sort $all "Name" "desc" -}}
+{{- $latest := first 5 $sorted -}}
+<style>
+  .latest-research-card {
+    border: 1px solid #111827;
+    padding: 22px;
+    margin-bottom: 22px;
+  }
+  .latest-research-card p {
+    max-width: none;
+    font-size: 1.12rem;
+    line-height: 1.62;
+  }
+  .dark .latest-research-card {
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+</style>
+<div style="width:min(94vw,800px);margin:0 auto;">
+{{- range $item := $latest -}}
+    {{- $id := $item.Name -}}
+    {{- $meta := index site.Data.latest_research $id -}}
+    {{- $folder := printf "static/media/latest-research/%s" $id -}}
+    {{- $files := readDir $folder -}}
+    {{- $scratch := newScratch -}}
+    {{- $scratch.Set "img" "" -}}
+    {{- if fileExists (printf "%s/%s.png" $folder $id) -}}
+      {{- $scratch.Set "img" (printf "%s.png" $id) -}}
+    {{- else if fileExists (printf "%s/%s.jpg" $folder $id) -}}
+      {{- $scratch.Set "img" (printf "%s.jpg" $id) -}}
+    {{- else if fileExists (printf "%s/%s.jpeg" $folder $id) -}}
+      {{- $scratch.Set "img" (printf "%s.jpeg" $id) -}}
+    {{- else if fileExists (printf "%s/%s.webp" $folder $id) -}}
+      {{- $scratch.Set "img" (printf "%s.webp" $id) -}}
+    {{- end -}}
+    {{- range $f := $files -}}
+      {{- if and (not $f.IsDir) (eq ($scratch.Get "img") "") -}}
+        {{- $name := lower $f.Name -}}
+        {{- if or (hasSuffix $name ".png") (hasSuffix $name ".jpg") (hasSuffix $name ".jpeg") (hasSuffix $name ".webp") -}}
+          {{- $scratch.Set "img" $f.Name -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $img := $scratch.Get "img" -}}
+    {{- if eq $img "" -}}
+      {{- $img = printf "%s.png" $id -}}
+    {{- end -}}
+    <div class="latest-research-card">
+      <img src="/media/latest-research/{{ $id }}/{{ $img }}?v={{ now.Unix }}" alt="latest research {{ $id }}" style="width:min(100%,600px);height:auto;display:block;margin:0 auto 14px auto;" />
+      <p class="en-only" style="margin:0 0 8px 0;">{{ with $meta }}{{ .en_summary }}{{ else }}Summary pending.{{ end }}</p>
+      <p class="zh-only" style="margin:0 0 8px 0;">{{ with $meta }}{{ .zh_summary }}{{ else }}摘要待补充。{{ end }}</p>
+      <p class="en-only" style="margin:0;color:#a7acb3;">{{ with $meta }}{{ .en_meta }}{{ else }}Date: {{ $id }}{{ end }}</p>
+      <p class="zh-only" style="margin:0;color:#a7acb3;">{{ with $meta }}{{ .zh_meta }}{{ else }}时间：{{ $id }}{{ end }}</p>
+    </div>
+  {{- end -}}
+</div>

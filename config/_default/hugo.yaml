@@ -1,35 +1,16 @@
 # Configuration of Hugo
-# Guide: https://docs.hugoblox.com/tutorial/
-# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+title: "航空先进动力性能与稳定性课题组"
+baseURL: "https://example.com/"
 
-# Website name (set in params.yaml under hugoblox.branding.name)
-title: 'Aero-Engine Performance and Stability Group'
-# Website URL
-baseURL: 'https://example.com/'
-
-############################
-## LANGUAGE
-############################
-
-defaultContentLanguage: en
-hasCJKLanguage: false
+defaultContentLanguage: zh
+hasCJKLanguage: true
 defaultContentLanguageInSubdir: false
 removePathAccents: true
-
-############################
-## PAGE OPTIONS
-############################
 
 cascade:
   - target:
       path: /slides/**
       kind: page
-    outputs: [HTML, present]
-
-############################
-## ADVANCED
-############################
 
 build:
   writeStats: true
@@ -40,17 +21,17 @@ pagination:
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
-ignoreFiles: [".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+ignoreFiles: [ ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$" ]
 disableAliases: true
 outputs:
-  home: [HTML, RSS, headers, redirects, backlinks]
-  section: [HTML, RSS]
+  home: [ HTML, RSS, headers, redirects, backlinks ]
+  section: [ HTML, RSS ]
 imaging:
-  resampleFilter: lanczos
+  resampleFilter: Lanczos
   quality: 90
-  anchor: smart
+  anchor: Smart
   hint: picture
-timeout: 600000
+timeout: "600s"
 taxonomies:
   author: authors
   tag: tags

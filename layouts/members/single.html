@@ -1,0 +1,89 @@
+{{ define "main" }}
+<main class="member-profile-page">
+  {{ if eq .Site.Language.Lang "en" }}
+  <a class="member-back-button" href="/en/#members">← Back to Members</a>
+  {{ else }}
+  <a class="member-back-button" href="/#members">← 返回研究成员</a>
+  {{ end }}
+  <article class="member-profile">
+    {{ .Content }}
+  </article>
+</main>
+
+<style>
+  .member-profile-page {
+    width: min(94vw, 800px);
+    margin: 0 auto;
+    padding: 48px 0 72px;
+  }
+  .member-profile {
+    color: #334155;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .member-back-button {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 24px;
+    padding: 8px 14px;
+    border: 1px solid rgba(141, 185, 178, 0.55);
+    background: linear-gradient(90deg, #eef7f4 0%, #f6fafc 100%);
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+  .member-back-button:hover {
+    color: #0f766e;
+    border-color: rgba(15, 118, 110, 0.45);
+  }
+  .member-profile p {
+    max-width: none;
+    margin: 0 0 14px;
+  }
+  .member-profile img {
+    width: 130mm;
+    height: auto;
+    display: block;
+    margin: 0 0 26px;
+  }
+  .member-profile h2 {
+    margin: 0 0 22px;
+    color: #0f172a;
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+  .member-profile h3 {
+    margin: 34px 0 18px;
+    padding: 10px 18px;
+    border-left: 6px solid #8db9b2;
+    background: linear-gradient(90deg, #eef7f4 0%, #f5f9fb 100%);
+    color: #475569;
+    font-size: 1.25rem;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+  .member-profile .motto {
+    font-weight: 700;
+  }
+  .dark .member-profile {
+    color: #cbd5e1;
+  }
+  .dark .member-back-button {
+    border-color: rgba(156, 203, 196, 0.45);
+    background: linear-gradient(90deg, rgba(141, 185, 178, 0.22) 0%, rgba(120, 154, 181, 0.12) 100%);
+    color: #e2e8f0;
+  }
+  .dark .member-back-button:hover {
+    color: #99f6e4;
+  }
+  .dark .member-profile h2 {
+    color: #f8fafc;
+  }
+  .dark .member-profile h3 {
+    border-left-color: #9ccbc4;
+    background: linear-gradient(90deg, rgba(141, 185, 178, 0.22) 0%, rgba(120, 154, 181, 0.12) 100%);
+    color: #e2e8f0;
+  }
+</style>
+{{ end }}

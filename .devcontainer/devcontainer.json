@@ -6,7 +6,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ownable.ownable"
+        "ownable.ownable",
+        "openai.chatgpt"
       ]
     }
   },

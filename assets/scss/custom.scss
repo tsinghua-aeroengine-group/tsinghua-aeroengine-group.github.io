@@ -1,0 +1,46 @@
+/* Wider content area */
+.home-section .container,
+.page-body .container,
+.article-container {
+  max-width: 800px;
+}
+
+/* Hero: row 1 = photo + title, row 2 = full-width intro */
+.group-hero {
+  width: 100%;
+}
+
+.group-hero-top {
+  display: grid;
+  grid-template-columns: minmax(320px, 40%) 1fr;
+  column-gap: 44px;
+  align-items: start;
+}
+
+.group-hero-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.group-hero-photo p {
+  margin: 0;
+  text-align: center;
+}
+
+.group-hero-title h1 {
+  margin-top: 0;
+}
+
+.group-hero-intro {
+  margin-top: 24px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .group-hero-top {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}

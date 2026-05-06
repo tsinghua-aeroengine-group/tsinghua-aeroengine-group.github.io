@@ -1,0 +1,29 @@
+"202609-02":
+  en_summary: "This study develops a reduced order model based on a convolutional neural network and Grad-CAM interpretability to rapidly and accurately predict the aerodynamic performance and internal flow fields of an adaptive fan under diverse operating conditions."
+  zh_summary: "本研究开发了一种基于卷积神经网络和Grad-CAM可解释性的降阶模型，以快速且准确地预测自适应风扇在不同工况下的气动性能和内部流场。"
+  en_meta: "Conference: GPPS Montreal 26 ｜ Date: 2026-09"
+  zh_meta: "会议：GPPS Montreal 26 ｜ 时间：2026年09月"
+
+"202609-01":
+  en_summary: "This paper develops an efficient body force model integrating a fully connected neural network and streamline tracing to rapidly and accurately predict the aerodynamic performance of aero-engine fans under complex circumferential inlet distortion conditions."
+  zh_summary: "本文开发了一种高效的体积力模型，结合全连接神经网络和流线追踪技术，以快速且准确地预测航空发动机风扇在复杂的周向进气畸变条件下的气动性能。"
+  en_meta: "Conference: GPPS Montreal 26 ｜ Date: 2026-09"
+  zh_meta: "会议：GPPS Montreal 26 ｜ 时间：2026年09月"
+
+"202607-01":
+  en_summary: "This study develops a lumped-parameter rapid prediction model to simulate whole-engine surge-inducing processes in small aero-engines, revealing that compact combustor volumes and turbine unchoking effects significantly alter stability boundaries compared to isolated compressor components."
+  zh_summary: "本研究开发了一种集总参数快速预测模型，用于模拟小型航空发动机的整机诱喘过程，揭示了与孤立压气机部件相比，整机环境会显著改变其稳定边界。"
+  en_meta: "Conference: The 10TH joint conference of aerospace propulsion ｜ Date: 2026-07"
+  zh_meta: "会议：第十届空天动力联合会议 ｜ 时间：2026年07月"
+
+"202605-01":
+  en_summary: "This study uses fuel spiking tests to assess turbofan engine stability, revealing that this method effectively induces high-pressure compressor surge, and demonstrates that cold engine states significantly decrease surge fuel tolerance compared to hot conditions."
+  zh_summary: "本研究利用燃油阶跃试验评估涡扇发动机的稳定性，揭示了该方法能有效诱发高压压气机喘振，并证明与热态条件相比，发动机在冷态下会显著降低喘振耐油量。"
+  en_meta: "Journal: Journal of Propulsion Technology (in Chinese) ｜ Date: 2026-05"
+  zh_meta: "期刊：推进技术 ｜ 时间：2026年05月"
+
+"202511-01":
+  en_summary: "This research develops a rapid dynamic model to evaluate aero engine instability, demonstrating how turbine matching characteristics and the B parameter significantly alter the surge boundary during transitions from choked to unchoked turbine states."
+  zh_summary: "本研究开发了一种用于评估航空发动机失稳的快速动态模型，论证了在涡轮从堵塞向非堵塞状态过渡期间，涡轮匹配特性和B参数如何显著改变喘振边界。"
+  en_meta: "Journal: Chinese Journal of Aeronautics ｜ Date: 2025-11"
+  zh_meta: "期刊：Chinese Journal of Aeronautics ｜ 时间：2025年11月"
