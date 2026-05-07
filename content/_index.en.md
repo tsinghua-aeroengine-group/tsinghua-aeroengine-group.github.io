@@ -236,7 +236,7 @@ sections:
             .dark .visit-title::before,.dark .visit-title::after { background:#9ccbc4; }
             .dark .visit-label { color:#cbd5e1; }
             #contact.hbb-section { padding-bottom:0 !important; }
-            body:has(.visit-panel) .page-footer footer { margin-top:0 !important; }
+            body:has(.visit-panel) .page-footer footer { margin-top:10px !important; }
             @media (max-width:760px) { .visit-grid { grid-template-columns:1fr; } }
           </style>
           <h2 class="visit-title">Visitor Statistics</h2>
