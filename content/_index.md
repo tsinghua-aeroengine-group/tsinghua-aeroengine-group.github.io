@@ -212,45 +212,60 @@ sections:
           <div class="contact-row"><strong>电话</strong><p>010-62795170</p></div>
           <div class="contact-row"><strong>邮箱</strong><p>wangbaotong@tsinghua.edu.cn</p></div>
         </div>
-        <div class="visit-panel" style="width:min(94vw,800px);margin:28px auto 0;">
+        <div class="visit-panel" style="width:min(94vw,800px);margin:240px auto 80px;">
           <style>
-            .visit-panel { color:#334155; }
-            .visit-heading { margin:0 0 14px;padding:10px 18px;border-left:6px solid #8db9b2;background:linear-gradient(90deg,#eef7f4 0%,#f6fafc 100%);color:#475569;font-size:1.275rem;font-weight:700;line-height:1.35; }
-            .visit-grid { display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:stretch; }
-            .visit-counter { display:flex;flex-direction:column;justify-content:center;padding:18px;border:1px solid rgba(141,185,178,0.34);border-radius:14px;background:linear-gradient(135deg,#f2f8f6 0%,#f8fbfd 100%); }
-            .visit-label { margin:0 0 12px;color:#475569;font-weight:700; }
-            .visit-digits { display:flex;gap:5px; }
-            .visit-digit { min-width:30px;padding:8px 4px;border-radius:7px;background:#0f172a;color:#f8fafc;text-align:center;font-family:Georgia,serif;font-size:1.4rem;font-weight:700;box-shadow:inset 0 -10px 0 rgba(255,255,255,0.06); }
-            .visit-note { margin:12px 0 0;max-width:none;color:#64748b;font-size:0.92rem;line-height:1.45; }
-            .visit-map { position:relative;min-height:220px;border:1px solid rgba(141,185,178,0.34);border-radius:14px;overflow:hidden;background:radial-gradient(circle at 24% 35%,rgba(141,185,178,0.16),transparent 18%),linear-gradient(135deg,#eef7f4 0%,#f8fbfd 100%); }
-            .visit-map svg { width:100%;height:100%;min-height:220px;display:block; }
-            .visit-point { fill:#2f8f83;stroke:#fff;stroke-width:2;cursor:pointer; }
-            .visit-last { fill:#ef8f6a;stroke:#fff;stroke-width:2.4; }
-            .visit-tooltip { position:absolute;left:16px;bottom:14px;right:16px;padding:8px 10px;border-radius:9px;background:rgba(15,23,42,0.82);color:#f8fafc;font-size:0.88rem;line-height:1.35;opacity:0;transition:opacity 160ms ease;pointer-events:none; }
-            .visit-map:hover .visit-tooltip { opacity:1; }
-            .dark .visit-panel { color:#cbd5e1; }
-            .dark .visit-heading { color:#cbd5e1;border-left-color:#9ccbc4;background:linear-gradient(90deg,rgba(141,185,178,0.22) 0%,rgba(120,154,181,0.12) 100%); }
-            .dark .visit-counter,.dark .visit-map { border-color:rgba(156,203,196,0.3);background:linear-gradient(135deg,rgba(141,185,178,0.18) 0%,rgba(120,154,181,0.12) 100%); }
-            .dark .visit-label,.dark .visit-note { color:#cbd5e1; }
+            .visit-panel { color:#334155;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible; }
+            .visit-title { position:relative;width:100%;margin:0 0 18px;padding:9px 18px;text-align:center;color:#0f172a;font-size:1.48rem;font-weight:700;line-height:1.28;border-radius:0;background:linear-gradient(90deg,#eef7f4 0%,#f6fafc 100%); }
+            .visit-grid { display:grid;grid-template-columns:276px minmax(0,1fr);gap:14px;align-items:stretch;margin:0; }
+            .visit-counter,.visit-map { border-top:1px solid rgba(141,185,178,0.45);border-bottom:1px solid rgba(141,185,178,0.45);background:linear-gradient(90deg,rgba(242,248,246,0.7) 0%,rgba(248,251,253,0.7) 100%); }
+            .visit-title::before,.visit-title::after { content:"";position:absolute;top:0;bottom:0;width:6px;background:#8db9b2; }
+            .visit-title::before { left:0;border-radius:0; }
+            .visit-title::after { right:0;border-radius:0; }
+            .visit-counter { display:flex;flex-direction:column;justify-content:center;align-items:center;padding:10px 14px 10px 18px; }
+            .visit-label { margin:0 0 16px;text-align:center;color:#475569;font-size:1.36rem;font-weight:700;line-height:1.24; }
+            .visit-digits { display:flex;justify-content:center;gap:8px; }
+            .visit-digit { min-width:48px;padding:16px 6px 18px;border-radius:8px;background:linear-gradient(180deg,#111827 0%,#020617 100%);color:#f8fafc;text-align:center;font-family:'Times New Roman','Georgia','Noto Serif SC',serif;font-size:2.42rem;font-weight:700;line-height:0.92;letter-spacing:-0.01em;box-shadow:inset 0 -14px 0 rgba(255,255,255,0.055),0 8px 18px rgba(15,23,42,0.12); }
+            .visit-source { position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden; }
+            .visit-map { display:flex;align-items:center;justify-content:center;min-height:206px;padding:2px 0;overflow:hidden; }
+            .visit-map > div,.visit-map > a { width:100%;display:flex;justify-content:center; }
+            .visit-map #clustrmaps-widget,.visit-map .clustrmaps-map-control { width:540px !important;max-width:100% !important;margin:0 auto !important; }
+            .visit-map script + a,.visit-map canvas,.visit-map iframe,.visit-map img { max-width:100% !important;height:auto !important; }
+            .dark .visit-panel { color:#cbd5e1;background:transparent;box-shadow:none; }
+            .dark .visit-title { color:#f8fafc;background:linear-gradient(90deg,rgba(141,185,178,0.22) 0%,rgba(120,154,181,0.12) 100%); }
+            .dark .visit-counter,.dark .visit-map { border-color:rgba(156,203,196,0.35);background:linear-gradient(90deg,rgba(141,185,178,0.12) 0%,rgba(120,154,181,0.08) 100%); }
+            .dark .visit-title::before,.dark .visit-title::after { background:#9ccbc4; }
+            .dark .visit-label { color:#cbd5e1; }
             @media (max-width:760px) { .visit-grid { grid-template-columns:1fr; } }
           </style>
-          <h3 class="visit-heading">来访情况</h3>
+          <h2 class="visit-title">来访情况</h2>
           <div class="visit-grid">
             <section class="visit-counter">
               <p class="visit-label">来访总数</p>
-              <div class="visit-digits" aria-label="visit count"><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span></div>
-              <p class="visit-note">静态预览暂不记录真实 IP；接入访问统计接口后自动更新。</p>
+              <div class="visit-digits" aria-label="来访总数"><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span></div>
+              <span class="visit-source" id="vercount_value_site_uv">Loading</span>
+              <script defer src="https://events.vercount.one/js"></script>
+              <script>
+                (function () {
+                  function renderVisitDigits() {
+                    var source = document.getElementById('vercount_value_site_uv');
+                    var digits = document.querySelectorAll('.visit-panel .visit-digit');
+                    if (!source || !digits.length) return;
+                    var value = parseInt((source.textContent || '').replace(/\D/g, ''), 10);
+                    if (!Number.isFinite(value)) value = 0;
+                    String(value).padStart(5, '0').slice(-5).split('').forEach(function (n, i) {
+                      if (digits[i]) digits[i].textContent = n;
+                    });
+                  }
+                  renderVisitDigits();
+                  var source = document.getElementById('vercount_value_site_uv');
+                  if (source) new MutationObserver(renderVisitDigits).observe(source, { childList: true, characterData: true, subtree: true });
+                  setTimeout(renderVisitDigits, 1200);
+                  setTimeout(renderVisitDigits, 3000);
+                })();
+              </script>
             </section>
-            <section class="visit-map" aria-label="visitor map">
-              <svg viewBox="0 0 640 330" role="img">
-                <path d="M74 108 L148 82 L214 96 L250 130 L210 156 L136 148 Z" fill="rgba(100,116,139,0.16)" />
-                <path d="M252 80 L360 64 L422 98 L396 158 L296 150 Z" fill="rgba(100,116,139,0.16)" />
-                <path d="M420 132 L548 118 L592 178 L534 228 L432 202 Z" fill="rgba(100,116,139,0.16)" />
-                <path d="M276 184 L354 196 L374 270 L292 258 Z" fill="rgba(100,116,139,0.16)" />
-                <circle class="visit-point" cx="458" cy="142" r="0"><title>暂无真实访问数据</title></circle>
-                <circle class="visit-last" cx="458" cy="142" r="0"><title>暂无上次访问数据</title></circle>
-              </svg>
-              <div class="visit-tooltip">暂无真实访问数据。后续可接入后端统计接口，按中国/美国省州、其他国家聚合显示。</div>
+            <section class="visit-map">
+              <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=540&t=n&d=d2pytb3r24WXEqLTkp2g45ha0i1wLP-0tn4hDpQvjwY'></script>
             </section>
           </div>
         </div>

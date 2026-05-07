@@ -1,7 +1,30 @@
 {{ define "main" }}
 <main>
-  <section class="album-intro" style="width:min(94vw,800px);margin:20px auto 28px;padding:20px 24px;border-left:6px solid #8db9b2;background:linear-gradient(90deg,#eef7f4 0%,#f6fafc 100%);">
-    <h2 style="margin:0;color:#0f172a;font-size:1.45rem;line-height:1.35;font-weight:700;">{{ .Title }}</h2>
+  <style>
+    .history-page-title {
+      width: min(94vw, 800px);
+      margin: 20px auto 28px;
+      padding: 20px 24px;
+      border-left: 6px solid #8db9b2;
+      background: linear-gradient(90deg, #eef7f4 0%, #f6fafc 100%);
+    }
+    .history-page-title h2 {
+      margin: 0;
+      color: #0f172a;
+      font-size: 1.45rem;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+    .dark .history-page-title {
+      border-left-color: #9ccbc4;
+      background: linear-gradient(90deg, rgba(141, 185, 178, 0.22) 0%, rgba(120, 154, 181, 0.12) 100%);
+    }
+    .dark .history-page-title h2 {
+      color: #f8fafc;
+    }
+  </style>
+  <section class="history-page-title">
+    <h2>{{ .Title }}</h2>
   </section>
   {{ .Content }}
 </main>
