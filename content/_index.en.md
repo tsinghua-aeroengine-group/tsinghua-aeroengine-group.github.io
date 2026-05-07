@@ -244,12 +244,12 @@ sections:
             <section class="visit-counter">
               <p class="visit-label">Total Visits</p>
               <div class="visit-digits" aria-label="Total Visits"><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span></div>
-              <span class="visit-source" id="vercount_value_site_uv">Loading</span>
+              <span class="visit-source" id="vercount_value_site_pv">Loading</span>
               <script defer src="https://events.vercount.one/js"></script>
               <script>
                 (function () {
                   function renderVisitDigits() {
-                    var source = document.getElementById('vercount_value_site_uv');
+                    var source = document.getElementById('vercount_value_site_pv');
                     var digits = document.querySelectorAll('.visit-panel .visit-digit');
                     if (!source || !digits.length) return;
                     var value = parseInt((source.textContent || '').replace(/\D/g, ''), 10);
@@ -259,7 +259,7 @@ sections:
                     });
                   }
                   renderVisitDigits();
-                  var source = document.getElementById('vercount_value_site_uv');
+                  var source = document.getElementById('vercount_value_site_pv');
                   if (source) new MutationObserver(renderVisitDigits).observe(source, { childList: true, characterData: true, subtree: true });
                   setTimeout(renderVisitDigits, 1200);
                   setTimeout(renderVisitDigits, 3000);
@@ -267,7 +267,7 @@ sections:
               </script>
             </section>
             <section class="visit-map">
-              <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=540&t=n&d=d2pytb3r24WXEqLTkp2g45ha0i1wLP-0tn4hDpQvjwY&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"></script>
+
             </section>
           </div>
         </div>
