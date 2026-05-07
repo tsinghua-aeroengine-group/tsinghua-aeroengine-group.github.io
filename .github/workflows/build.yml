@@ -131,9 +131,17 @@ jobs:
           pnpm run pagefind || npx pagefind --site "public"
         fi
 
+    - name: Ensure VerCount verification file
+      run: |
+        mkdir -p public/.well-known
+        printf '%s\n' 'vercount-domain-verify=tsinghua-aeroengine-group.github.io,jl84zi8s2thbxu1ald56h1gf' > public/.well-known/vercount-verify-jl84zi8s2thbxu1ald56h1gf.txt
+        touch public/.nojekyll
+        test -f public/.well-known/vercount-verify-jl84zi8s2thbxu1ald56h1gf.txt
+        cat public/.well-known/vercount-verify-jl84zi8s2thbxu1ald56h1gf.txt
+
     - name: Upload artifact
       id: upload
-      uses: actions/upload-pages-artifact@v4
+      uses: actions/upload-pages-artifact@v5
       with:
         path: ./public
         include-hidden-files: true
