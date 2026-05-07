@@ -221,10 +221,13 @@ sections:
             .visit-title::before,.visit-title::after { content:"";position:absolute;top:0;bottom:0;width:6px;background:#8db9b2; }
             .visit-title::before { left:0;border-radius:0; }
             .visit-title::after { right:0;border-radius:0; }
-            .visit-counter { display:flex;flex-direction:column;justify-content:center;align-items:center;padding:10px 14px 10px 18px; }
-            .visit-label { margin:0 0 16px;text-align:center;color:#475569;font-size:1.36rem;font-weight:700;line-height:1.24; }
+            .visit-counter { display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;padding:10px 14px 10px 18px; }
+            .visit-stat { width:100%;display:flex;flex-direction:column;align-items:center; }
+            .visit-stat + .visit-stat { padding-top:12px;border-top:1px solid rgba(141,185,178,0.28); }
+            .visit-label { margin:0 0 10px;text-align:center;color:#475569;font-size:1.34rem;font-weight:700;line-height:1.24; }
             .visit-digits { display:flex;justify-content:center;gap:8px; }
-            .visit-digit { min-width:48px;padding:16px 6px 18px;border-radius:8px;background:linear-gradient(180deg,#111827 0%,#020617 100%);color:#f8fafc;text-align:center;font-family:'Times New Roman','Georgia','Noto Serif SC',serif;font-size:2.42rem;font-weight:700;line-height:0.92;letter-spacing:-0.01em;box-shadow:inset 0 -14px 0 rgba(255,255,255,0.055),0 8px 18px rgba(15,23,42,0.12); }
+            .visit-digit { min-width:40px;padding:13px 5px 15px;border-radius:7px;background:linear-gradient(180deg,#102a43 0%,#041521 100%);color:#f8fafc;text-align:center;font-family:'Times New Roman','Georgia','Noto Serif SC',serif;font-size:2.08rem;font-weight:700;line-height:0.92;letter-spacing:-0.01em;box-shadow:inset 0 -12px 0 rgba(255,255,255,0.055),0 7px 15px rgba(15,23,42,0.12); }
+            .visit-stat:nth-of-type(2) .visit-digit { background:linear-gradient(180deg,#164136 0%,#06211b 100%); }
             .visit-source { position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden; }
             .visit-map { display:flex;align-items:center;justify-content:center;min-height:206px;padding:2px 0;overflow:hidden; }
             .visit-map > div,.visit-map > a { width:100%;display:flex;justify-content:center; }
@@ -233,6 +236,7 @@ sections:
             .dark .visit-panel { color:#cbd5e1;background:transparent;box-shadow:none; }
             .dark .visit-title { color:#f8fafc;background:linear-gradient(90deg,rgba(141,185,178,0.22) 0%,rgba(120,154,181,0.12) 100%); }
             .dark .visit-counter,.dark .visit-map { border-color:rgba(156,203,196,0.35);background:linear-gradient(90deg,rgba(141,185,178,0.12) 0%,rgba(120,154,181,0.08) 100%); }
+            .dark .visit-stat + .visit-stat { border-top-color:rgba(156,203,196,0.24); }
             .dark .visit-title::before,.dark .visit-title::after { background:#9ccbc4; }
             .dark .visit-label { color:#cbd5e1; }
             #contact.hbb-section { padding-bottom:0 !important; }
@@ -242,15 +246,22 @@ sections:
           <h2 class="visit-title">Visitor Statistics</h2>
           <div class="visit-grid">
             <section class="visit-counter">
-              <p class="visit-label">Total Visits</p>
-              <div class="visit-digits" aria-label="Total Visits"><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span></div>
-              <span class="visit-source" id="vercount_value_site_pv">Loading</span>
+              <div class="visit-stat">
+                <p class="visit-label">Total Visits</p>
+                <div class="visit-digits" data-visit-source="vercount_value_site_pv" aria-label="Total Visits"><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span></div>
+                <span class="visit-source" id="vercount_value_site_pv">Loading</span>
+              </div>
+              <div class="visit-stat">
+                <p class="visit-label">Unique Visitors</p>
+                <div class="visit-digits" data-visit-source="vercount_value_site_uv" aria-label="Unique Visitors"><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span><span class="visit-digit">0</span></div>
+                <span class="visit-source" id="vercount_value_site_uv">Loading</span>
+              </div>
               <script defer src="https://events.vercount.one/js"></script>
               <script>
                 (function () {
-                  function renderVisitDigits() {
-                    var source = document.getElementById('vercount_value_site_pv');
-                    var digits = document.querySelectorAll('.visit-panel .visit-digit');
+                  function renderVisitDigits(group) {
+                    var source = document.getElementById(group.getAttribute('data-visit-source'));
+                    var digits = group.querySelectorAll('.visit-digit');
                     if (!source || !digits.length) return;
                     var value = parseInt((source.textContent || '').replace(/\D/g, ''), 10);
                     if (!Number.isFinite(value)) value = 0;
@@ -258,16 +269,21 @@ sections:
                       if (digits[i]) digits[i].textContent = n;
                     });
                   }
-                  renderVisitDigits();
-                  var source = document.getElementById('vercount_value_site_pv');
-                  if (source) new MutationObserver(renderVisitDigits).observe(source, { childList: true, characterData: true, subtree: true });
-                  setTimeout(renderVisitDigits, 1200);
-                  setTimeout(renderVisitDigits, 3000);
+                  function renderAllVisitDigits() {
+                    document.querySelectorAll('.visit-panel .visit-digits[data-visit-source]').forEach(renderVisitDigits);
+                  }
+                  renderAllVisitDigits();
+                  ['vercount_value_site_pv', 'vercount_value_site_uv'].forEach(function (id) {
+                    var source = document.getElementById(id);
+                    if (source) new MutationObserver(renderAllVisitDigits).observe(source, { childList: true, characterData: true, subtree: true });
+                  });
+                  setTimeout(renderAllVisitDigits, 1200);
+                  setTimeout(renderAllVisitDigits, 3000);
                 })();
               </script>
             </section>
             <section class="visit-map">
-
+                <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f0f0f0&w=540&t=n&d=lHzHSDwuK9JpkS0MmuI1L2nCdcVPJdQrK7JLiY8rb9E&co=3882b5'></script>
             </section>
           </div>
         </div>
