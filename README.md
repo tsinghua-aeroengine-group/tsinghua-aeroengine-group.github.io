@@ -1,247 +1,154 @@
-# [The Academic CV That Gets You Hired](https://github.com/HugoBlox/hugo-theme-academic-cv)
+# 航空先进动力性能与稳定性课题组官网
 
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=preview)
+这是清华大学航空发动机研究院“航空先进动力性能与稳定性课题组”的官方网站项目。网站基于 Hugo 与 Hugo Blox 构建，采用静态站点架构，内容清晰、加载快速、部署方便，也非常适合课题组长期维护与持续迭代。
 
-<!-- TODO: Replace with a short demo video showing Hugo Chat generating an academic profile page -->
-<!-- https://github.com/user-attachments/assets/REPLACE_ME -->
+当前网页已经围绕课题组展示进行了较完整的定制：整体宽度统一、浅绿与浅蓝的视觉风格克制舒适，中英文双语内容、研究成员、成果发表、活动相册、招募信息、联系方式、来访统计和网页编辑历史等模块都已形成较稳定的结构。
 
-<h1 align="center">The Portfolio That Works While You Sleep</h1>
+## 技术栈
 
-<p align="center">
-  <strong>Your unfair advantage in academia.</strong><br/>
-  Stop sending PDFs into the void. Build a living portfolio that boosts citations, attracts collaborators, and lands offers — all from simple Markdown files you own.<br/>
-  Built on <a href="https://github.com/HugoBlox/kit">HugoBlox</a> — the open-source framework where AI generates your pages and you own everything as Markdown.
-</p>
+- Hugo Extended：静态网站生成
+- Hugo Blox：页面组件与主题基础
+- Pagefind：站内搜索
+- ClustrMaps 与 VerCount：来访地图和访问统计
+- Markdown / HTML / SCSS：内容与样式维护
 
-<p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=cta_top"><b>Deploy Free (60s)</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_top_academic-cv"><b>Customize with AI</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=demo">Live Demo</a>
-</p>
+## 本地预览
 
-<div align="center">
-
-  <a href="https://github.com/HugoBlox/hugo-theme-academic-cv">
-    <img src="https://img.shields.io/github/stars/HugoBlox/hugo-theme-academic-cv?label=Star&logo=github&style=flat-square&color=181717" alt="GitHub Stars">
-  </a>
-  <a href="https://discord.gg/z8wNYzb">
-    <img src="https://img.shields.io/discord/722225264733716590?label=Discord&logo=discord&logoColor=white&style=flat-square&color=5865F2" alt="Discord">
-  </a>
-  <a href="https://github.com/HugoBlox/kit">
-    <img src="https://img.shields.io/github/stars/HugoBlox/kit?label=HugoBlox&logo=github&style=flat-square&color=181717" alt="HugoBlox Stars">
-  </a>
-
-</div>
-
-<p align="center">
-  <sub>Part of the <a href="https://github.com/HugoBlox/kit"><strong>HugoBlox</strong></a> ecosystem · Trusted by <strong>150,000+</strong> researchers at <strong>MIT, Stanford, Google & NVIDIA</strong> · Rated <strong>4.9/5</strong> (official survey) · Since <strong>2016</strong></sub>
-</p>
-
----
-
-## Why This Template?
-
-Most academic CVs are static PDFs that get lost in the pile. This is an **always-on portfolio** that works 24/7 to advance your career:
-
-- **Students & grads** applying to top labs and industry roles — stand out with a living portfolio, not a flat PDF
-- **Researchers** who want a citable online presence with publications, projects, and talks in one place
-- **Faculty & PIs** showcasing their lab, group news, and team members
-- **Anyone with publications** who wants auto-imported citations from BibTeX/DOI without manual formatting
-
-> *"My citations went up 3x after switching to this template. Colleagues started finding my work through Google Scholar links back to my site. The BibTeX auto-sync is a lifesaver."*
-> — **Dr. Li Zhang**, AI Research Scientist
-
-> *"I set this up during a weekend and my PhD students had their profiles live by Monday. They just edit Markdown — no tickets to IT, no WordPress logins."*
-> — **Prof. Sarah Chen**, Computer Science, ETH Zürich
-
-<p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=cta_mid">
-    <img src="https://img.shields.io/badge/⚡️%20Deploy%20Your%20CV%20in%2060s-7c3aed?style=for-the-badge" alt="Deploy this template" width="400">
-  </a>
-</p>
-
----
-
-## Features
-
-| Feature | Benefit |
-| :--- | :--- |
-| **BibTeX / DOI auto-import** | Drop in a `.bib` file — publication pages generated automatically with proper citations. |
-| **Jupyter & RMarkdown** | Publish `.ipynb` notebooks as beautiful posts — code, outputs, and narrative intact. |
-| **LaTeX math** | Native rendering for equations and technical writing. |
-| **Markdown slides** | Present with reveal.js — math, syntax highlighting, diagrams, speaker notes. |
-| **SEO & AI-ready** | Optimized for search engines and LLMs — your work gets found, cited, and recommended. |
-| **AI page generation** | Describe what you need to [Hugo Chat](https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=features_academic-cv) — get structured pages with correct front matter instantly. |
-| **Visual editor** | Drag-and-drop blocks in VS Code with [Ownable CMS](https://marketplace.visualstudio.com/items?itemName=ownable.ownable). No coding needed. |
-| **Plain Markdown** | Every file is human-readable. No database, no lock-in, take your content anywhere. |
-| **Free hosting** | Deploy to GitHub Pages, Netlify, Vercel, or Cloudflare — all free tier. |
-
----
-
-## 🚀 Get Started
-
-### Step 1: Deploy Your Site
-
-**Option A: Launch in browser** (fastest — no install needed)
-
-> [!TIP]
-> Deploy a live site in 60 seconds — no software to install:
-> [**Deploy Academic CV free**](https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=get_started)
-
-**Option B: Use the CLI**
-
-```bash
-# Requires Hugo Extended & Node.js
-npx hugoblox create site --template academic-cv
+```powershell
+npm install
+npm run dev
 ```
 
-### Step 2: Customize With AI + Visual Editing
+`npm run dev` 会先重新构建网站、刷新 Pagefind 搜索索引，然后启动 Hugo 本地预览服务。
 
-<table>
-<tr>
-<td width="50%">
+## 正式构建
 
-**✨ Hugo Chat** — AI customization
+```powershell
+npm run build
+```
 
-Tell Hugo Chat what you want in plain English. It generates structured pages with the right front matter, shortcodes, and blocks for this template.
+构建结果会输出到 `public/` 目录。
 
-> *"Add a publications page with my 2024 papers from this BibTeX file"*
+## 主要目录
 
-[**Try Hugo Chat — free**](https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=step2_academic-cv)
+| 路径 | 用途 |
+| :--- | :--- |
+| `content/_index.md` | 中文主页内容 |
+| `content/_index.en.md` | 英文主页内容 |
+| `content/members/` | 研究成员个人子页面 |
+| `content/gallery/` | 活动相册子页面 |
+| `content/history/` | 网页编辑历史页面 |
+| `data/latest_research.yaml` | 最新研究文字信息 |
+| `data/gallery.yaml` | 活动相册栏目配置 |
+| `layouts/members/single.html` | 研究成员子页面模板 |
+| `layouts/gallery/` | 活动相册页面模板 |
+| `layouts/shortcodes/` | 最新研究、成果发表、活动相册等短代码 |
+| `layouts/history/list.html` | 网页编辑历史页面模板 |
+| `layouts/partials/achievements/` | 成果发表中英文内容 |
+| `assets/scss/custom.scss` | 全站自定义样式 |
+| `static/media/` | 网站图片与媒体资源 |
+| `config/_default/` | Hugo 与 Hugo Blox 配置 |
 
-</td>
-<td width="50%">
+## 图片放置约定
 
-**Ownable CMS** — visual editing in VS Code
+### 研究成员
 
-1. Install [Ownable CMS](https://marketplace.visualstudio.com/items?itemName=ownable.ownable)
-2. Open your project in VS Code
-3. Click the Ownable icon to start editing visually
+- 成员主页头像：`static/media/members/`
+- 成员个人页照片：`static/media/members/profiles/`
 
-</td>
-</tr>
-</table>
+个人页面中的图片路径写在对应成员的 Markdown 文件中，例如：
 
-![Ownable CMS in Action](https://raw.githubusercontent.com/HugoBlox/kit/main/.github/media/studio/slide-1.webp)
-*Ownable CMS: Drag-and-drop page builder inside VS Code.*
+```html
+<img src="/media/members/profiles/ding-zechen.JPG" alt="丁泽琛" />
+```
 
-> [!NOTE]
-> **New to Hugo?** No problem. You don't need to know Hugo — edit visually or write Markdown. Hugo is the engine under the hood that makes your site fast, secure, and free to host. [Learn more →](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=docs_academic-cv)
+请注意文件名大小写，部署环境可能区分 `.jpg` 和 `.JPG`。
 
----
+### 最新研究
 
-## 💎 Go Premium
+最新研究图片放在：
 
-Love the free version? **Academic CV Pro** and **Resume Pro** take it further:
+```text
+static/media/latest-research/研究编号/
+```
 
-- Premium designs that make an unforgettable first impression
-- Advanced timeline and layout options
-- Full-featured course/lecture sections
-- Remove attribution, priority support
+例如：
 
-| | **Academic CV** (Free) | **Academic CV Pro** |
-| :--- | :---: | :---: |
-| Design | Professional & clean | **Premium designs** |
-| Layouts | Standard sections | **Advanced timelines** |
-| Courses/lectures | Basic | **Full-featured** |
-| Support | Community | **Priority** |
+```text
+static/media/latest-research/202605-01/202605-01.png
+```
 
-<p align="center">
-  <a href="https://hugoblox.com/pricing?utm_source=github&utm_medium=readme&utm_content=premium_academic-cv"><b>Compare plans</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/academic-cv-pro?utm_source=github&utm_medium=readme&utm_content=premium_deploy_academic-cv"><b>Deploy Academic CV Pro</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/resume-pro?utm_source=github&utm_medium=readme&utm_content=premium_deploy_resume"><b>Deploy Resume Pro</b></a>
-</p>
+文字信息维护在：
 
----
+```text
+data/latest_research.yaml
+```
 
-## 🏆 Why HugoBlox?
+### 活动相册
 
-> *Why not just use WordPress, Webflow, or an AI builder like Lovable?*
+每个相册对应一个文件夹：
 
-| | **AI builders** (Lovable, v0) | **CMS platforms** (WordPress, Webflow) | **HugoBlox** |
-| :--- | :---: | :---: | :---: |
-| AI generates your pages | Yes | No | **Yes** |
-| You own the output as readable files | No — React code | No — database | **Yes — Markdown** |
-| Free to host forever | No | No | **Yes** |
-| Human-editable without the tool | Barely | No | **Yes — it's Markdown** |
-| Open source | No | No | **Yes — MIT licensed** |
+```text
+static/media/gallery/相册slug/
+```
 
-> [!IMPORTANT]
-> Your content is plain Markdown files. No lock-in, no database, no vendor dependency. If you ever want to leave, take your files and go.
+建议包含：
 
----
+```text
+cover.jpg
+01.jpg
+02.jpg
+03.jpg
+```
 
-## FAQ
+相册封面和标题配置维护在：
 
-<details>
-<summary><b>Do I need to know Hugo?</b></summary>
-No. Edit visually with Ownable CMS or write Markdown. Hugo is the build engine — you don't need to touch it.
-</details>
+```text
+data/gallery.yaml
+```
 
-<details>
-<summary><b>Can I import my existing publications?</b></summary>
-Yes. Drop a BibTeX file and publication pages are generated automatically with proper citations, metadata, and links.
-</details>
+相册子页面维护在：
 
-<details>
-<summary><b>Can I host for free?</b></summary>
-Yes. GitHub Pages, Netlify, Vercel, and Cloudflare Pages all have free tiers for static sites.
-</details>
+```text
+content/gallery/
+```
 
-<details>
-<summary><b>Can I migrate my content later?</b></summary>
-Yes. Your site is just Markdown files in a folder. Copy them anywhere.
-</details>
+## 内容维护提示
 
-<details>
-<summary><b>What's Hugo Chat?</b></summary>
-An AI assistant trained on Hugo and HugoBlox docs. Describe what you want and it generates the right pages with correct front matter. <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=faq_academic-cv">Free to try.</a>
-</details>
+- 首页栏目主要在 `content/_index.md` 和 `content/_index.en.md` 中维护。
+- 研究成员个人介绍在 `content/members/成员slug/index.md` 和 `index.en.md` 中维护。
+- 成果发表内容在 `layouts/partials/achievements/zh.html` 和 `layouts/partials/achievements/en.html` 中维护。
+- 样式微调优先查看 `assets/scss/custom.scss`，部分页面也有内联样式。
+- 修改图片后如果预览没有更新，可以清理浏览器缓存，或删除 `resources/_gen/images/` 与 `public/` 后重新构建。
 
-<details>
-<summary><b>Can I cancel Pro anytime?</b></summary>
-Yes. No questions asked.
-</details>
+## 搜索说明
 
----
+站内搜索使用 Pagefind。为了避免默认模板内容进入搜索结果，模板示例目录已通过构建配置禁用。中文搜索使用 Pagefind 的中文分词模式：
 
-<h2 align="center">🚀 Ready to launch?</h2>
+```json
+"pagefind": "pagefind --site public --force-language zh"
+```
 
-<p align="center">
-  Deploy in 60 seconds. Customize with AI. Own it as Markdown forever.
-</p>
+## 项目特点
 
-<p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Deploy Academic CV — free</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_final_academic-cv"><b>Customize with AI</b></a>
-</p>
+- 中英文双语展示，适合国际交流。
+- 研究成员、成果发表、活动相册等学术团队核心内容结构清楚。
+- 页面宽度和视觉语言统一，整体观感淡雅、稳定、专业。
+- 静态网站无数据库依赖，维护成本低，部署可靠。
+- 基于 Hugo 的内容组织方式非常适合科研团队长期积累成果与活动记录。
 
----
+## 维护建议
 
-## Community & Support
+每次较大修改后，建议执行：
 
-- 💬 [**Discord**](https://discord.gg/z8wNYzb) — ask questions, share your site
-- 📚 [**Docs**](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=community_academic-cv)
-- ⭐ [**Star HugoBlox**](https://github.com/HugoBlox/kit) — help others find it
-- 🐦 [**Follow on X**](https://x.com/GoOwnable)
+```powershell
+npm run build
+```
 
-### Sponsors
+确认无报错后再提交或部署。若只是日常预览，使用：
 
-[**❤️ Sponsor on GitHub**](https://github.com/sponsors/gcushen) | [**🏢 Become a Partner**](https://github.com/sponsors/gcushen)
+```powershell
+npm run dev
+```
 
----
-
-Copyright 2016-present [**Lore Labs**](https://lore.tech/?utm_source=github&utm_medium=readme).
-Released under the [MIT License](./LICENSE.md).
-
-<p align="center">
-  <sub>HugoBlox is a trademark of Lore Labs.</sub>
-</p>
-
-<!--START_SECTION:news-->
-<!--END_SECTION:news-->
+这个网站已经从通用模板逐步打磨成一个有明确课题组气质的专业主页，后续只需要按既定目录补充内容和图片，就可以保持长期、稳定、漂亮地更新。

@@ -15,6 +15,27 @@
       line-height: 1.35;
       font-weight: 700;
     }
+    .history-back-wrap {
+      width: min(94vw, 800px);
+      margin: 20px auto 0;
+    }
+    .history-back-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border: 1px solid rgba(141, 185, 178, 0.55);
+      border-radius: 6px;
+      background: #f2f8f6;
+      color: #0f172a;
+      font-size: 0.96rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+    .history-back-button:hover {
+      background: #e6f2ef;
+      text-decoration: none;
+    }
     .dark .history-page-title {
       border-left-color: #9ccbc4;
       background: linear-gradient(90deg, rgba(141, 185, 178, 0.22) 0%, rgba(120, 154, 181, 0.12) 100%);
@@ -22,7 +43,22 @@
     .dark .history-page-title h2 {
       color: #f8fafc;
     }
+    .dark .history-back-button {
+      border-color: rgba(156, 203, 196, 0.42);
+      background: rgba(141, 185, 178, 0.16);
+      color: #f8fafc;
+    }
+    .dark .history-back-button:hover {
+      background: rgba(141, 185, 178, 0.24);
+    }
   </style>
+  <div class="history-back-wrap">
+    {{ if eq .Site.Language.Lang "en" }}
+      <a class="history-back-button" href="/en/">← Back to Home</a>
+    {{ else }}
+      <a class="history-back-button" href="/">← 返回主页</a>
+    {{ end }}
+  </div>
   <section class="history-page-title">
     <h2>{{ .Title }}</h2>
   </section>

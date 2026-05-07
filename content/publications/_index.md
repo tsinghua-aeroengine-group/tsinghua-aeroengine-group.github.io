@@ -1,0 +1,12 @@
+﻿---
+title: "Publications"
+build:
+  render: never
+  list: never
+  publishResources: false
+cascade:
+  build:
+    render: never
+    list: never
+    publishResources: false
+---

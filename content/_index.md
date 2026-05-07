@@ -212,7 +212,7 @@ sections:
           <div class="contact-row"><strong>电话</strong><p>010-62795170</p></div>
           <div class="contact-row"><strong>邮箱</strong><p>wangbaotong@tsinghua.edu.cn</p></div>
         </div>
-        <div class="visit-panel" style="width:min(94vw,800px);margin:240px auto 80px;">
+        <div class="visit-panel" style="width:min(94vw,800px);margin:240px auto 24px;">
           <style>
             .visit-panel { color:#334155;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible; }
             .visit-title { position:relative;width:100%;margin:0 0 18px;padding:9px 18px;text-align:center;color:#0f172a;font-size:1.48rem;font-weight:700;line-height:1.28;border-radius:0;background:linear-gradient(90deg,#eef7f4 0%,#f6fafc 100%); }

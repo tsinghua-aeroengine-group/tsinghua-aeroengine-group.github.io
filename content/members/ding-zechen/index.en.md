@@ -3,7 +3,7 @@ title: "Zechen Ding"
 ---
 
 <h2>Zechen Ding</h2>
-<img src="/media/members/profiles/ding-zechen.jpg" alt="Zechen Ding" />
+<img src="/media/members/profiles/ding-zechen.JPG" alt="Zechen Ding" />
 
 <p class="motto">Research Motto: Being alive is already good.</p>
 

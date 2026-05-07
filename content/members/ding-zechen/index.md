@@ -3,7 +3,7 @@ title: "丁泽琛"
 ---
 
 <h2>丁泽琛</h2>
-<img src="/media/members/profiles/ding-zechen.jpg" alt="丁泽琛" />
+<img src="/media/members/profiles/ding-zechen.JPG" alt="丁泽琛" />
 
 <p class="motto">科研座右铭：活着就好。</p>
 

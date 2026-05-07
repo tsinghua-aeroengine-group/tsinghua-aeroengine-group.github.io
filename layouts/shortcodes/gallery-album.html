@@ -14,13 +14,21 @@
   }
   .album-back {
     display: inline-flex;
+    align-items: center;
     margin: 0 0 20px;
     padding: 8px 14px;
     border: 1px solid rgba(141, 185, 178, 0.55);
-    background: linear-gradient(90deg, #eef7f4 0%, #f6fafc 100%);
-    color: #334155;
+    border-radius: 6px;
+    background: #f2f8f6;
+    color: #0f172a;
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.2;
     text-decoration: none;
-    font-size: 0.95rem;
+  }
+  .album-back:hover {
+    background: #e6f2ef;
+    text-decoration: none;
   }
   .album-intro {
     margin: 0 0 28px;
@@ -73,11 +81,18 @@
     color: #64748b;
     background: #f8fbfb;
   }
-  .dark .album-back,
   .dark .album-intro {
     border-color: rgba(156, 203, 196, 0.45);
     background: linear-gradient(90deg, rgba(141, 185, 178, 0.22) 0%, rgba(120, 154, 181, 0.12) 100%);
     color: #e2e8f0;
+  }
+  .dark .album-back {
+    border-color: rgba(156, 203, 196, 0.42);
+    background: rgba(141, 185, 178, 0.16);
+    color: #f8fafc;
+  }
+  .dark .album-back:hover {
+    background: rgba(141, 185, 178, 0.24);
   }
   .dark .album-intro h2 {
     color: #f8fafc;
