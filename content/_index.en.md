@@ -212,7 +212,7 @@ sections:
           <div class="contact-row"><strong>Phone</strong><p>010-62795170</p></div>
           <div class="contact-row"><strong>Email</strong><p>wangbaotong@tsinghua.edu.cn</p></div>
         </div>
-        <div class="visit-panel" style="width:min(94vw,800px);margin:240px auto 24px;">
+        <div class="visit-panel" style="width:min(94vw,800px);margin:240px auto 0;">
           <style>
             .visit-panel { color:#334155;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible; }
             .visit-title { position:relative;width:100%;margin:0 0 18px;padding:9px 18px;text-align:center;color:#0f172a;font-size:1.48rem;font-weight:700;line-height:1.28;border-radius:0;background:linear-gradient(90deg,#eef7f4 0%,#f6fafc 100%); }
@@ -235,6 +235,8 @@ sections:
             .dark .visit-counter,.dark .visit-map { border-color:rgba(156,203,196,0.35);background:linear-gradient(90deg,rgba(141,185,178,0.12) 0%,rgba(120,154,181,0.08) 100%); }
             .dark .visit-title::before,.dark .visit-title::after { background:#9ccbc4; }
             .dark .visit-label { color:#cbd5e1; }
+            #contact.hbb-section { padding-bottom:0 !important; }
+            body:has(.visit-panel) .page-footer footer { margin-top:0 !important; }
             @media (max-width:760px) { .visit-grid { grid-template-columns:1fr; } }
           </style>
           <h2 class="visit-title">Visitor Statistics</h2>

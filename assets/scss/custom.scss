@@ -94,3 +94,7 @@ a[href="/history/"].footer-history-link {
 .dark .footer-history-link span {
   color: inherit !important;
 }
+
+body:has(.visit-panel) .page-footer footer {
+  margin-top: 0.5rem !important;
+}
