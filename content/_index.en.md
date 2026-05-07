@@ -265,7 +265,7 @@ sections:
               </script>
             </section>
             <section class="visit-map">
-              <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=540&t=n&d=d2pytb3r24WXEqLTkp2g45ha0i1wLP-0tn4hDpQvjwY'></script>
+              <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=540&t=n&d=d2pytb3r24WXEqLTkp2g45ha0i1wLP-0tn4hDpQvjwY&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff"></script>
             </section>
           </div>
         </div>
