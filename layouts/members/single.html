@@ -1,9 +1,9 @@
 {{ define "main" }}
 <main class="member-profile-page">
   {{ if eq .Site.Language.Lang "en" }}
-  <a class="member-back-button" href="/en/#members">← Back to Members</a>
+  <a class="member-back-button" href="/en/#members">← Back to Team Members</a>
   {{ else }}
-  <a class="member-back-button" href="/#members">← 返回研究成员</a>
+  <a class="member-back-button" href="/#members">← 返回团队成员</a>
   {{ end }}
   <article class="member-profile">
     {{ .Content }}

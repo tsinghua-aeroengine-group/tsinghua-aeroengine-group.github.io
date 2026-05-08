@@ -5,7 +5,7 @@ main:
   - name: Latest Research
     url: /en/#latest-research
     weight: 20
-  - name: Members
+  - name: Team Members
     url: /en/#members
     weight: 30
   - name: Publications

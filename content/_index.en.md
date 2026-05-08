@@ -58,7 +58,7 @@ sections:
   - block: markdown
     id: members
     content:
-      title: "Members"
+      title: "Team Members"
       subtitle: ""
       text: |-
         <div style="width:min(94vw,800px);margin:0 auto;">
@@ -105,13 +105,13 @@ sections:
           </div>
           <h3 class="member-section-heading">Alumni</h3>
           <p style="margin:0 0 40px 0;">None yet</p>
-          <h3 class="member-section-heading">Administrative Assistant</h3>
+          <h3 class="member-section-heading">Research Assistant</h3>
           <div style="display:flex;gap:30px;align-items:flex-start;margin-bottom:40px;">
             <img class="member-list-photo" src="/media/members/liu-xi.jpg" alt="Xi Liu" />
             <div style="flex:1 1 auto;">
-              <p class="member-list-name"><a href="/en/members/liu-xi/">Xi Liu</a> Administrative Assistant</p>
-              <p class="member-list-text">Administrative assistant of the group at the Institute for Aero Engine, Tsinghua University, responsible for daily group affairs.</p>
-              <p class="member-list-text" style="margin-bottom:0;">Email: XXX</p>
+              <p class="member-list-name"><a href="/en/members/liu-xi/">Xi Liu</a> Research Assistant</p>
+              <p class="member-list-text">Research assistant of the group at the Institute for Aero Engine, Tsinghua University, responsible for daily group affairs and research administration.</p>
+              <p class="member-list-text" style="margin-bottom:0;">Email: liu-xi@mail.tsinghua.edu.cn</p>
             </div>
           </div>
         </div>
@@ -283,7 +283,7 @@ sections:
               </script>
             </section>
             <section class="visit-map">
-                <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f0f0f0&w=540&t=n&d=lHzHSDwuK9JpkS0MmuI1L2nCdcVPJdQrK7JLiY8rb9E&co=3882b5'></script>
+                <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f8f8f8&w=540&t=n&d=lHzHSDwuK9JpkS0MmuI1L2nCdcVPJdQrK7JLiY8rb9E&co=1c73b0&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
             </section>
           </div>
         </div>

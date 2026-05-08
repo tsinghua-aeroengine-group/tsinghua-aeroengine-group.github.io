@@ -58,7 +58,7 @@ sections:
   - block: markdown
     id: members
     content:
-      title: "研究成员"
+      title: "团队成员"
       subtitle: ""
       text: |-
         <div style="width:min(94vw,800px);margin:0 auto;">
@@ -105,13 +105,13 @@ sections:
           </div>
           <h3 class="member-section-heading">毕业学生</h3>
           <p style="margin:0 0 40px 0;">暂无</p>
-          <h3 class="member-section-heading">行政助理</h3>
+          <h3 class="member-section-heading">科研助理</h3>
           <div style="display:flex;gap:30px;align-items:flex-start;margin-bottom:40px;">
             <img class="member-list-photo" src="/media/members/liu-xi.jpg" alt="刘熹" />
             <div style="flex:1 1 auto;">
-              <p class="member-list-name"><a href="/members/liu-xi/">刘熹</a> 行政助理</p>
-              <p class="member-list-text">清华大学航空发动机研究院课题组行政助理，负责课题组日常事务。</p>
-              <p class="member-list-text" style="margin-bottom:0;">邮箱：XXX</p>
+              <p class="member-list-name"><a href="/members/liu-xi/">刘熹</a> 科研助理</p>
+              <p class="member-list-text">清华大学航空发动机研究院课题组行政助理，负责课题组日常事务及科研管理。</p>
+              <p class="member-list-text" style="margin-bottom:0;">邮箱：liu-xi@mail.tsinghua.edu.cn</p>
             </div>
           </div>
         </div>
@@ -283,7 +283,7 @@ sections:
               </script>
             </section>
             <section class="visit-map">
-                <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f0f0f0&w=540&t=n&d=lHzHSDwuK9JpkS0MmuI1L2nCdcVPJdQrK7JLiY8rb9E&co=3882b5'></script>
+                <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f8f8f8&w=540&t=n&d=lHzHSDwuK9JpkS0MmuI1L2nCdcVPJdQrK7JLiY8rb9E&co=1c73b0&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
             </section>
           </div>
         </div>
